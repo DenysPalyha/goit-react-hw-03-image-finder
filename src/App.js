@@ -4,6 +4,7 @@ import ImageGallery from './Components/ImageGallery/ImageGallery';
 import imagesApi from './servicec/imageApi';
 import LoaderImages from './Components/loader/Loader';
 import Button from './Components/Button/Button';
+import ButtonApp from './Components/ButtonApp/ButtonApp.js';
 import styles from './App.module.scss';
 
 class App extends Component {
@@ -28,8 +29,13 @@ class App extends Component {
     const { searchQuery, page } = this.state;
     this.setState({ loading: true });
 
+    // window.scrollTo({
+    //   top: window.innerHeight,
+    //   behavior: 'smooth',
+    // });
+
     window.scrollTo({
-      top: window.innerHeight,
+      top: document.documentElement.scrollHeight,
       behavior: 'smooth',
     });
 
@@ -49,10 +55,17 @@ class App extends Component {
     this.setState({ searchQuery: query, page: 1, images: [] });
   };
 
+  hendleButtonApp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   render() {
     const { images, error, loading } = this.state;
     return (
-      <div className={styles['App']}>
+      <div className={styles.App}>
         <Searchbar onSubmit={this.hendleSerchFormSubmite} />
         {error && <p>Whoops, something went wrong: {error.message}</p>}
 
@@ -62,6 +75,9 @@ class App extends Component {
         {loading && <LoaderImages />}
         {images.length > 1 && !loading && (
           <Button onFetchImages={this.fetchImages} />
+        )}
+        {window.scrollY > 1000 && (
+          <ButtonApp hendleButtonApp={this.hendleButtonApp} />
         )}
       </div>
     );

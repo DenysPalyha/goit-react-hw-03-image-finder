@@ -18,8 +18,8 @@ class Searchbar extends Component {
 
   render() {
     return (
-      <header className={styles['Searchbar']}>
-        <form onSubmit={this.handleSubmit} className={styles['SearchForm']}>
+      <header className={styles.Searchbar}>
+        <form onSubmit={this.handleSubmit} className={styles.SearchForm}>
           <button type="submit" className={styles['SearchForm-button']}>
             <span className={styles['SearchForm-button-label']}>Search</span>
           </button>

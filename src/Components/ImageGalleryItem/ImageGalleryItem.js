@@ -6,7 +6,7 @@ const ImageGalleryItem = ({ images }) => {
   return (
     <>
       {images.map(({ id, webformatURL, largeImageURL }) => (
-        <li key={id} className={styles['ImageGalleryItem']}>
+        <li key={id} className={styles.ImageGalleryItem}>
           <img
             src={webformatURL}
             alt={largeImageURL}

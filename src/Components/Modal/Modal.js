@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const Modal = ({ largeImageURL, onCloseModal }) => {
   return (
-    <div onClick={onCloseModal} className={styles['Overlay']}>
-      <div className={styles['Modal']}>
+    <div onClick={onCloseModal} className={styles.Overlay}>
+      <div className={styles.Modal}>
         <img src={largeImageURL} alt="" />
       </div>
     </div>

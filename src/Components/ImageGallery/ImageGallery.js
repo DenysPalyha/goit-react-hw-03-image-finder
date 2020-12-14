@@ -35,7 +35,7 @@ class ImageGallery extends Component {
     const { images } = this.props;
     return (
       <>
-        <ul className={styles['ImageGallery']} onClick={this.setLargeImages}>
+        <ul className={styles.ImageGallery} onClick={this.setLargeImages}>
           <ImageGalleryItem images={images} />
         </ul>
         {showModal && (
