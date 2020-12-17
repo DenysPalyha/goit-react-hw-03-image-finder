@@ -65,7 +65,7 @@ class PicturesRender extends Component {
   render() {
     const { images, error, loading } = this.state;
     return (
-      <div className={styles.App}>
+      <div className={styles.Pictures}>
         <Searchbar onSubmit={this.hendleSerchFormSubmite} />
         {error && <p>Whoops, something went wrong: {error.message}</p>}
 
